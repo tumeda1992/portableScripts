@@ -1,0 +1,6 @@
+d_stock_chart_cross
+d_stock_financial
+d_stock_fx_value
+d_stock_tag
+d_stock_tag_relation
+d_stock_value
