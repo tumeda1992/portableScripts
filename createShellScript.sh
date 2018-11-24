@@ -14,7 +14,7 @@ echo "#haveOpt=0" >> ${filename}
 echo "#while getopts f:dc: OPT" >> ${filename}
 echo "#do" >> ${filename}
 echo "#  case \$OPT in" >> ${filename}
-echo "#    f) filename='\$OPTARG'" >> ${filename}
+echo "#    f) filename=\"\$OPTARG\"" >> ${filename}
 echo "#      haveOpt=1" >> ${filename}
 echo "#      ;;" >> ${filename}
 echo "#    d) isDebug=1" >> ${filename}
