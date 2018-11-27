@@ -34,10 +34,7 @@ fi
 
 prj_name=$(basename ${PWD})
 
-echo "remove existing image"
-docker stop ${prj_name}
-docker rm ${prj_name}
-docker rmi ${prj_name}
+echo $($(dirname $0)/remove_container_for.sh ${prj_name})
 
 echo ""
 echo "build new image and container"
