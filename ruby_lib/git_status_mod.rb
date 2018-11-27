@@ -31,7 +31,7 @@ def git_status_json()
 
     # モード切り替え
     mode = MODE_ADDED_ITEMS if git_status_str.include?("Changes to be committed:")
-    
+
     # add済みを無視
     # if git_status_str
     
@@ -48,7 +48,7 @@ def git_status_json()
       
   end
 
-
+  # git status 結果
   #On branch master
   #Changes to be committed:
   #  (use "git reset HEAD <file>..." to unstage)
