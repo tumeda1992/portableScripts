@@ -1,3 +1,5 @@
+source alias.sh
+
 # https://qiita.com/tonosama/items/50c043ebc89009ad95be
 
 # Lines configured by zsh-newuser-install

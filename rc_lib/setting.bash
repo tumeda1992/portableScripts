@@ -1,3 +1,5 @@
+source alias.sh
+
 export PS1="[\u@\h:\w]\$ "
 
 function parse_git_branch {
