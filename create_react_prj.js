@@ -32,15 +32,21 @@ if ["$1" = ""];then
 fi
 
 echo "このスクリプトは以下を必要とします"
-echo "yarn"
-echo ""
+echo "yarn 　インストール方法：'brew install yarn' or npm install yarn"
 echo "以上が入っていない場合、実行途中でエラーになることがあります"
+echo ""
 
 app_name=$1
 yarn create react-app ${app_name}
 cd ${app_name}
+rm -rf .git
+echo "↑こちらがスクリプト終了後に実行できるコマンドです"
 
 echo ""
+echo "yarn ejectを実行します"
 echo "yを入力してください"
 yarn eject
-rm -rf .git
+echo ""
+echo "以下のようなcreate-react-appで使用するコマンドを使用できます"
+echo "yarn start"
+
