@@ -1,6 +1,5 @@
-# TODO alias.shではなく共通のcommon_sh_rc.shを読みこむ
-# TODO alias.shを読み込むにしても.bashrcなど読み込み元のファイルを元にした相対パスなので読めていない
-source alias.sh
+cur_dir=$(dirname "${0}")
+source ${cur_dir}/parts_config/common_sh_rc.sh
 
 # https://qiita.com/tonosama/items/50c043ebc89009ad95be
 

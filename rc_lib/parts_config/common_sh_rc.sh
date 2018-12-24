@@ -24,4 +24,7 @@
 #then
 #  shift $(($OPTIND - 1))
 #fi
-# TODO ここでaliasとかbash,zsh共通の設定を行う
+cur_dir=$(dirname "${0}")
+source ${cur_dir}/alias.sh
+
+
