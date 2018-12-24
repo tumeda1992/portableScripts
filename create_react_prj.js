@@ -39,7 +39,7 @@ echo ""
 app_name=$1
 yarn create react-app ${app_name}
 cd ${app_name}
-rm -rf .git
+
 echo "↑こちらがスクリプト終了後に実行できるコマンドです"
 
 echo ""
@@ -47,6 +47,7 @@ echo "yarn ejectを実行します"
 echo "yを入力してください"
 yarn eject
 echo ""
+rm -rf .git # yarn eject後に消さないとエラー出る
 echo "以下のようなcreate-react-appで使用するコマンドを使用できます"
 echo "yarn start"
 
