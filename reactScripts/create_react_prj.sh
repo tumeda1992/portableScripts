@@ -25,6 +25,12 @@
 #  shift $(($OPTIND - 1))
 #fi
 
+exist_git_files_str=$(ls | grep .git)
+
+if ["$exist_git_files_str" <> ""];then
+  echo ".git が含まれるディレクトリでこのスクリプトを実行することはできません"
+  exit 0
+fi
 
 if ["$1" = ""];then
   echo "引数にアプリ名を入力して再実行してください"
@@ -47,7 +53,9 @@ echo "yarn ejectを実行します"
 echo "yを入力してください"
 yarn eject
 echo ""
-rm -rf .git # yarn eject後に消さないとエラー出る
 echo "以下のようなcreate-react-appで使用するコマンドを使用できます"
 echo "yarn start"
 
+yarn add -D webpack-cli
+
+$($(dirname $0)/yarnAddReduxMod.sh)
