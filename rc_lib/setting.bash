@@ -16,6 +16,6 @@ function promps {
     *)      TITLEBAR="";;
   esac
   local BASE="${WHITE}\u@\h:${GREEN}\w"
-  PS1="${TITLEBAR}${BASE}${WHITE}\$(parse_git_branch)${WHITE}\$${WHITE} "
+  PS1="${TITLEBAR}${WHITE}\h:${GREEN}\w${WHITE} \u \$(parse_git_branch)${WHITE}\$${WHITE} "
 }
 promps
