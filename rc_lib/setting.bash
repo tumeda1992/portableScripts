@@ -1,3 +1,6 @@
+cur_dir=$(dirname "${0}")
+source ${cur_dir}/parts_config/common_sh_rc.sh
+
 export PS1="[\u@\h:\w]\$ "
 
 function parse_git_branch {
