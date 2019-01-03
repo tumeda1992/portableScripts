@@ -1,7 +1,6 @@
 #! /bin/bash
 
 #（オプション）このファイルを作業ディレクトリとする
-#cd $(dirname $0)
 ##（オプション）オプション引数を使う場合は以下を使用
 #haveOpt=0
 #while getopts f:dc: OPT
@@ -23,8 +22,10 @@
 ## オプションがある場合、オプション分だけ引数をずらす（これがないと-fなどが$1に入る）
 #then
 #  shift $(($OPTIND - 1))
-#fi
-cur_dir=$(dirname "${0}")
+#fii
+
+# https://rcmdnk.com/blog/2015/07/24/computer-bash-zsh/
+cur_dir=$(cd $(dirname $BASH_SOURCE) && pwd)
 source ${cur_dir}/alias.sh
 
 

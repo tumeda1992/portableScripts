@@ -1,4 +1,5 @@
-cur_dir=$(dirname "${0}")
+# https://rcmdnk.com/blog/2015/07/24/computer-bash-zsh/
+cur_dir=$(cd $(dirname $BASH_SOURCE) && pwd)
 source ${cur_dir}/parts_config/common_sh_rc.sh
 
 export PS1="[\u@\h:\w]\$ "
