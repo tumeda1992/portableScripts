@@ -1,5 +1,6 @@
 # https://rcmdnk.com/blog/2015/07/24/computer-bash-zsh/
-# cur_dir=$(cd $(dirname $BASH_SOURCE) && pwd)
+# https://qiita.com/yudoufu/items/48cb6fb71e5b498b2532
+cur_dir=$(cd $(dirname ${BASH_SOURCE:-$0}) > /dev/null && pwd)
 source ${cur_dir}/parts_config/common_sh_rc.sh
 
 # https://qiita.com/tonosama/items/50c043ebc89009ad95be
