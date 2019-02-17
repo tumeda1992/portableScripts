@@ -9,8 +9,9 @@ alias gl1='git log --oneline --graph --decorate'
 # ruby/rails alias
 alias rs='bundle exec rails'
 
-
-
+# top
+alias topc='top -o cpu'
+alias topm='top -o mem'
 
 
 

@@ -25,10 +25,9 @@
 #  shift $(($OPTIND - 1))
 #fi
 
-yarn add --dev redux
-yarn add --dev react-redux
-yarn add --dev redux-devtools-extension
-yarn add --dev axios
-yarn add --dev redux-thunk
-yarn add --dev redux-form
-yarn add --dev react-router-dom
+port=$1
+headerSample="PID"
+pid=$(lsof -i :$port | grep -v $headerSample | head -n 1 | awk '{print $2}')
+execCmd="kill $pid"
+echo "$execCmd"
+bash -c "$execCmd"
