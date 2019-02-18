@@ -25,9 +25,8 @@
 #  shift $(($OPTIND - 1))
 #fi
 
-yarn add --dev redux react-redux
-yarn add --dev redux-devtools-extension
-yarn add --dev axios redux-thunk
-yarn add --dev react-router-bootstrap
-yarn add --dev redux-form
-yarn add --dev react-router-dom react-router-bootstrap
+
+cd $(dirname $0)
+gpullCmd="git pull origin $(./currentBranch.sh);"
+echo "$gpullCmd"
+bash -c "$gpullCmd"
