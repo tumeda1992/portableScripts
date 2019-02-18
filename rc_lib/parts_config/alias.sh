@@ -15,7 +15,12 @@ alias gl1='git log --oneline --graph --decorate'
 # ruby/rails alias
 alias rs='bundle exec rails'
 
-# TODO aliasでのgpull廃止。aliasにcurBranchのキャッシュ残るから。globalスクリプトディレクトリを作成してそこにパスを通し、どこでも実行できるように
+# TODO aliasでのgpull廃止。aliasにcurBranchのキャッシュ残るから。スクリプトでgpullできるようにして、gpullエイリアスでそのスクリプトを指定する
+
+# top
+alias topc='top -o cpu'
+alias topm='top -o mem'
+
 
 
 
