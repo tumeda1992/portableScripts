@@ -25,9 +25,7 @@
 #  shift $(($OPTIND - 1))
 #fi
 
-port=$1
-headerSample="PID"
-pid=$(lsof -i :$port | grep -v $headerSample | head -n 1 | awk '{print $2}')
-execCmd="kill -9 $pid"
-echo "$execCmd"
-bash -c "$execCmd"
+compile_target=$1
+compiled_name=$(echo ${compile_target} |sed s/.c/.o/)
+
+gcc ${compile_target} -o ${compiled_name}
