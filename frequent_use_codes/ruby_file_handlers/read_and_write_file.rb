@@ -36,8 +36,7 @@ def progress_timing?(all_line_count, line_no)
   div_number = 100
 
   if all_line_count < 100
-    all_line_count = all_line_count * 100
-    line_no = line_no * 100
+    return false
   elsif all_line_count > 100_000
     div_number = 1000
   end
