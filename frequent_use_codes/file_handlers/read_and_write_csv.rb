@@ -1,12 +1,17 @@
 require "csv"
 
 def main(csv)
-  values = CSV.foreach(csv, headers: true).with_index(0).map do |row, i|
-    # break ["1", "0", "1"] if i > 10 # デバッグ
-    row
+  csv_foreach(csv) do |row|
+    p row
+
+
   end
-  values.each do |value|
-    # 処理
+
+end
+
+def csv_foreach(csv)
+  CSV.foreach(csv, headers: true).with_index(1).map do |row, row_no|
+    row
   end
 end
 
