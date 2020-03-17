@@ -7,11 +7,12 @@ def main(csv)
   # output_cols = ["hoge"]
   # output_file_writer.puts(output_cols)
 
-  csv_foreach(csv) do |row|
+  FileHandler.csv_foreach(csv) do |row|
     # 処理
     p row
 
-    # output_file_writer.puts(output_cols.map {|col| result[col]})
+    # output_row_values = []
+    # output_file_writer.puts(output_row_values)
   end
 
   # output_file_writer.close

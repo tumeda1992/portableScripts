@@ -15,7 +15,8 @@ def main(csv)
   values.each do |value|
     # 処理
 
-    # output_file_writer.puts(output_cols.map {|col| result[col]})
+    # output_row_values = []
+    # output_file_writer.puts(output_row_values)
   end
 
   # output_file_writer.close
