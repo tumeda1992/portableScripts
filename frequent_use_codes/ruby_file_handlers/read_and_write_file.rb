@@ -48,4 +48,8 @@ def progress(current_count, all_count)
   "#{Time.now}: #{finished_rate_percent}% (#{current_count}/#{all_count})"
 end
 
+def percent(num, all_count)
+  (num.fdiv(all_count) * 100).round(2)
+end
+
 main(ARGV[0])

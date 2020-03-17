@@ -62,4 +62,8 @@ def line_count(file)
   }
 end
 
+def percent(num, all_count)
+  (num.fdiv(all_count) * 100).round(2)
+end
+
 main(ARGV[0])
