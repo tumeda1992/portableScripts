@@ -58,9 +58,7 @@ module FileHandler
     end
 
     def progress(current_count, all_count)
-      def progress(current_count, all_count)
-        "#{Time.now}: #{CommonUtilities.percent(current_count, all_count)}% (#{current_count}/#{all_count})"
-      end
+      "#{Time.now}: #{CommonUtilities.percent(current_count, all_count)}% (#{current_count}/#{all_count})"
     end
   end
 end
