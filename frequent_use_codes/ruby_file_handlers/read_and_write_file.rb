@@ -17,7 +17,7 @@ module FileHandler
     def file_foreach(file)
       File.open(file) do |lines|
         log "#{Time.now}: read start #{file}"
-        all_line_count = lines.size
+        all_line_count = line_count(file)
 
         return_values = lines.each_line.each.with_index(1).map do |line, line_no|
           log progress(line_no, all_line_count) if progress_timing?(all_line_count, line_no)
