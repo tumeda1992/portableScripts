@@ -28,7 +28,7 @@ module FileHandler
       all_line_count = line_count(csv)
 
       return_values = CSV.foreach(csv, headers: true).with_index(1).map do |row, row_no|
-        log progress(line_no, all_line_count) if progress_timing?(all_line_count, row_no)
+        log progress(row_no, all_line_count) if progress_timing?(all_line_count, row_no)
         yield(row)
       end
 
@@ -70,8 +70,8 @@ end
 
 module CommonUtilities
   class << self
-    def percent(num, all_count)
-      (num.fdiv(all_count) * 100).round(2)
+    def progress(current_count, all_count)
+      "#{Time.now}: #{CommonUtilities.percent(current_count, all_count)}% (#{current_count}/#{all_count})"
     end
   end
 end

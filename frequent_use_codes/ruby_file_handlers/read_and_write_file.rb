@@ -54,9 +54,7 @@ module FileHandler
     end
 
     def progress(current_count, all_count)
-      finished_rate = current_count.fdiv(all_count)
-      finished_rate_percent = (finished_rate * 100).round(2)
-      "#{Time.now}: #{finished_rate_percent}% (#{current_count}/#{all_count})"
+      "#{Time.now}: #{CommonUtilities.percent(current_count, all_count)}% (#{current_count}/#{all_count})"
     end
   end
 end
