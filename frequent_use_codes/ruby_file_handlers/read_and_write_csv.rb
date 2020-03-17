@@ -36,15 +36,8 @@ def log(message)
 end
 
 def progress_timing?(all_line_count, line_no)
+  return false if all_line_count < 100
   div_number = 100
-
-  if all_line_count < 100
-    return false
-  end
-
-  if all_line_count > 1_000_000
-    div_number = 1000
-  end
 
   percent_unit = all_line_count / div_number
   line_no % percent_unit == 0
