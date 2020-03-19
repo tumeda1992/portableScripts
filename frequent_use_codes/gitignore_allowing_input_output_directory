@@ -1,0 +1,13 @@
+!.gitkeep
+
+vendor/
+.bundle/
+
+/tmp/*
+/input/*
+/output/*
+
+!/input/
+
+!/output/
+!/output/scripts/
