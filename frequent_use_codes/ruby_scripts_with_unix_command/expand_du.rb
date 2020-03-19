@@ -29,10 +29,9 @@ def output_disksizes(du_result_str, exec_command)
   output_filename = "#{exec_command.gsub(/( |\/){1,}/, "_")}_#{Time.new.strftime("%Y%m%d%H%M%S")}.log"
   output_file = File.open(output_filename, "w")
 
-  max_number_of_digit = disk_usages.map{|disk_usage| disk_usage.number_of_digit}.max
   disk_usages.each do |disk_usage|
-    puts disk_usage.to_s(max_number_of_digit)
-    output_file.puts(disk_usage.to_s(max_number_of_digit))
+    puts disk_usage.to_s
+    output_file.puts(disk_usage.to_s)
   end
 
   output_file.close
@@ -48,17 +47,9 @@ class DiskUsage
     @path = du_result_params[1]
   end
 
-  def to_s(number_of_digit = nil)
-    size_for_output = if number_of_digit.nil?
-                        @humanreadable_size.to_s
-                      else
-                        sprintf("%#{number_of_digit}d" % @humanreadable_size)
-                      end
-    "#{size_for_output}#{@humanreadable_unit} #{@path}"
-  end
-
-  def number_of_digit
-    @humanreadable_size.to_i.to_s.length
+  def to_s
+    # NOTE とりあえず5桁を指定。必要になったら増やす
+    "#{sprintf("%5d" % @humanreadable_size)}#{@humanreadable_unit} #{@path}"
   end
 
   def humanreadable_size_with_unit
