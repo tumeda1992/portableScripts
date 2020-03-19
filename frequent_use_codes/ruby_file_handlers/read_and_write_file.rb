@@ -6,7 +6,7 @@ def main(file)
   FileHandler.file_foreach(file) do |line|
     p line
 
-    # output_file.put(line)
+    # output_file.puts(line)
   end
 
   # output_file_writer.close
