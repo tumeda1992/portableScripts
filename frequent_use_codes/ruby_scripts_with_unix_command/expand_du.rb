@@ -12,7 +12,7 @@
 def main(target_path)
   return puts "ArgumentError: パスを引数に入れてください" if target_path.nil?
 
-  exec_command = "du -d 1 #{target_path}"
+  exec_command = "du -k -d 1 #{target_path}"
   du_result_str = `#{exec_command}`
 
   return if du_result_str.empty?
@@ -68,15 +68,14 @@ class DiskUsage
   private
 
   def calc_humanreadable_size
-    return [@size, "B "] if kb_size < 1
-    return [kb_size, "KB"] if mb_size < 1
+    return [@size, "KB"] if mb_size < 1
     return [mb_size, "MB"] if gb_size < 1
     return [gb_size, "GB"] if tb_size < 1
     [tb_size, "TB"]
   end
 
   def kb_size
-    @size.fdiv(1024).round(1)
+    @size
   end
 
   def mb_size
