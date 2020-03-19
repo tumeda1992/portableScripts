@@ -8,6 +8,7 @@ vendor/
 /output/*
 
 !/input/
+!/input/sample_hoges.txt
 
 !/output/
-!/output/scripts/
+!/output/sample_hoge.csv
