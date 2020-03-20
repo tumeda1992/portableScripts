@@ -1,15 +1,35 @@
+require "csv"
+require 'fileutils'
+
 $is_debug = true
 
 def main(file)
-  # output_file_writer = File.open(output_file, "w")
+  output_file = file.dup
+  original_file = "#{file}.without_bom"
+  File.rename(file, original_file)
+  
+  output_file_writer = File.open(output_file, "w")
 
-  FileHandler.file_foreach(file) do |line|
-    p line
+  is_first_row = true
+  FileHandler.file_foreach(original_file) do |line|
+    output_line = if is_first_row
+                    is_first_row = false
+                    bom_with(line)
+                  else
+                    line
+                  end
 
-    # output_file_writer.puts(line)
+    output_file_writer.puts(output_line)
   end
 
-  # output_file_writer.close
+  output_file_writer.close
+end
+
+def bom_with(first_line)
+  bom = %w(EF BB BF).map { |e| e.hex.chr }.join
+  CSV.generate(bom) do |writer|
+    writer << [first_line]
+  end
 end
 
 module FileHandler
@@ -66,5 +86,7 @@ module CommonUtilities
     end
   end
 end
+
+
 
 main(ARGV[0])
