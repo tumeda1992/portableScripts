@@ -4,11 +4,13 @@ def main(file)
   # output_file_writer = File.open(output_file, "w")
 
   FileHandler.file_foreach(file) do |line|
+    # 処理
     p line
 
     # output_file_writer.puts(line)
   end
 
+  # puts "#{output_file}を作成しました"
   # output_file_writer.close
 end
 

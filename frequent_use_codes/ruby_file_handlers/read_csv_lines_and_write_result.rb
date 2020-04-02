@@ -19,6 +19,7 @@ def main(csv)
     # output_file_writer.puts(output_row_values)
   end
 
+  # puts "#{output_file}を作成しました"
   # output_file_writer.close
 end
 
