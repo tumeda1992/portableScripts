@@ -59,7 +59,7 @@ module FileHandler
     end
 
     def progress(current_count, all_count)
-      "#{Time.now}: #{CommonUtilities.percent(current_count, all_count)}% (#{current_count}/#{all_count})"
+      "#{Time.now}: #{CommonUtilities.percent(current_count, all_count)}% (#{CommonUtilities.number_with_commma(current_count)} / #{CommonUtilities.number_with_commma(all_count)})"
     end
   end
 end
@@ -69,9 +69,11 @@ module CommonUtilities
     def percent(num, all_count)
       (num.fdiv(all_count) * 100).round(2)
     end
+
+    def number_with_commma(number)
+      number.to_s.gsub(/(\d)(?=\d{3}+$)/, '\\1,')
+    end
   end
 end
-
-
 
 main(ARGV[0])
