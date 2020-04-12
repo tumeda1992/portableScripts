@@ -1,3 +1,6 @@
+# アプリケーション作成
+`rails new blog --api`
+
 # テーブル作成
 ```
 $ rails generate model Micropost content:text user:references
