@@ -1,1 +1,5 @@
 printDBTableList.py
+
+/_debug/*
+!/_debug/
+!/_debug/test.log
