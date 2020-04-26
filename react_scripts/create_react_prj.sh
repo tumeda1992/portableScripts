@@ -58,6 +58,7 @@ install_libraries () {
   if [ $? != 0 ]; then exit_with_error; fi
 
   $this_script_dir/yarn_add_redux_mod.sh
+  $this_script_dir/yarn_add_graphql_mod.sh
 }
 
 main "$1"
