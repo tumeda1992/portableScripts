@@ -6,13 +6,13 @@ this_script_dir=$(dirname $0)
 . ${this_script_dir}/log_functions.sh
 
 main () {
-  exec_command "yarn add --dev redux react-redux"
-  exec_command "yarn add --dev redux-devtools-extension"
-  exec_command "yarn add --dev axios redux-thunk"
-  exec_command "yarn add --dev react-router-bootstrap"
-  exec_command "yarn add --dev redux-form"
-  exec_command "yarn add --dev react-router-dom react-router-bootstrap"
-  exec_command "yarn add -D immutable"
+  exec_command "yarn add redux react-redux"
+  exec_command "yarn add redux-devtools-extension"
+  exec_command "yarn add axios redux-thunk"
+  exec_command "yarn add react-router-bootstrap"
+  exec_command "yarn add redux-form"
+  exec_command "yarn add react-router-dom react-router-bootstrap"
+  exec_command "yarn add immutable"
 }
 
 exec_command () {

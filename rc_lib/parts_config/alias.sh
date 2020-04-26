@@ -13,7 +13,7 @@ alias gc='git checkout'
 alias gd='git diff'
 alias gpush="${gitRoot}/git_scripts/gitPushOriginCurBranch.sh"
 alias gpull="${gitRoot}/git_scripts/gitPullOriginCurBranch.sh"
-#alias gpull="git pull origin"
+alias gsave="${gitRoot}/git_scripts/git_save_all_change.sh -b"
 alias gl1='git log --oneline --graph --decorate'
 
 # ruby/rails alias
