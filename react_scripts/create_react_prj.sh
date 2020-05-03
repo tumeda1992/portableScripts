@@ -40,7 +40,7 @@ warn () {
 
 create_default_react_app () {
   app_name=$1
-  yarn create react-app ${app_name}
+  yarn create react-app ${app_name} --template typescript
   cd ${app_name}
   if [ $? != 0 ]; then exit_with_error; fi
   log_this_script_message "↑こちらがスクリプト終了後に実行できるコマンドです"
