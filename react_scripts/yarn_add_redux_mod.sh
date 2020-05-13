@@ -8,9 +8,8 @@ this_script_dir=$(dirname $0)
 main () {
   exec_command "yarn add redux react-redux"
   exec_command "yarn add redux-devtools-extension"
-  exec_command "yarn add axios redux-thunk"
+  exec_command "yarn add redux-thunk"
   exec_command "yarn add react-router-bootstrap"
-  exec_command "yarn add formik"
   exec_command "yarn add react-router-dom react-router-bootstrap"
   exec_command "yarn add immutable"
 }
