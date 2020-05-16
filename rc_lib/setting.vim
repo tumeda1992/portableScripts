@@ -60,3 +60,5 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" コメントの色変更（最初が青だったため）
+hi Comment ctermfg=gray
