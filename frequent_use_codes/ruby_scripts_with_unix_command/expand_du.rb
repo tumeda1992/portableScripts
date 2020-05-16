@@ -9,10 +9,18 @@
 # 引数
 # - パス: duコマンドを行う対象パス
 
+require 'rbconfig'
+
 def main(target_path)
   return puts "ArgumentError: パスを引数に入れてください" if target_path.nil?
 
-  exec_command = "du -k -d 1 #{target_path}"
+  max_depth_option_str = if os == :macosx
+    "-d"
+  else
+    "--max-depth"
+  end
+
+  exec_command = "du -k #{max_depth_option_str} 1 #{target_path}"
   du_result_str = `#{exec_command}`
 
   return if du_result_str.empty?
@@ -79,6 +87,21 @@ class DiskUsage
 
   def tb_size
     gb_size.fdiv(1024).round(1)
+  end
+end
+
+def os
+  case RbConfig::CONFIG['host_os']
+  when /mswin|msys|mingw|cygwin|bccwin|wince|emc/
+    :windows
+  when /darwin|mac os/
+    :macosx
+  when /linux/
+    :linux
+  when /solaris|bsd/
+    :unix
+  else
+    :unknown
   end
 end
 
