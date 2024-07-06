@@ -25,9 +25,16 @@ alias rs='bundle exec rails'
 alias topc='top -o cpu'
 alias topm='top -o mem'
 
-
-
-
+# docker
+alias dei='docker exec -it'
+de() {
+  local container_name=$1
+  if [ -z "$container_name" ]; then
+    echo "コンテナ名を指定してください。"
+    return 1
+  fi
+  docker exec -it "${container_name}" bash
+}
 
 
 
