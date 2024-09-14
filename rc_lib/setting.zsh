@@ -15,6 +15,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt extended_history #ヒストリに実行時間も保存
 setopt hist_ignore_dups #直前と同じコマンドはヒストリに追加しない
+his(){ history -i -100}
 
 # <Tab>でパス名の補完候補を表示したあと、
 # 続けて<Tab>を押すと候補からパス名を選択することができるようになる
