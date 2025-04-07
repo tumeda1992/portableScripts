@@ -37,3 +37,23 @@ precmd() { vcs_info }
 PROMPT='%F{green}%~%f %n %*
 %F{yellow}$%f '
 RPROMPT='${vcs_info_msg_0_}'
+
+# gitのブランチとかをタブ補完させたい場合
+# (事前準備)
+# $ brew install zsh-completions
+# $ brew install zsh-autosuggestions
+# $ brew install zsh-syntax-highlighting
+# $ rm -f ~/.zcompdump; compinit
+# # ターミナル起動ごとにwarningが出るのを防ぐ
+# chmod -R go-w "$(brew --prefix)/share"
+
+# 設定
+# if type brew &>/dev/null; then
+#   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+#   source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+#   source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#   autoload -Uz compinit && compinit
+#   autoload -Uz colors && colors
+# fi
+
+
