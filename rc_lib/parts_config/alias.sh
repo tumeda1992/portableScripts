@@ -6,6 +6,15 @@ gitRoot=$(cd $(dirname $(dirname $curDir)) > /dev/null && pwd)
 # 初期起動時のブランチをキャッシュしてしまうのでaliasで設定したコマンド実行時に毎回取得するようにした
 # currentBranch=$(git branch | grep '\*'  | awk '{print $2}')
 
+function git_tag_and_show_push() {
+  local branch=$(git rev-parse --abbrev-ref HEAD)
+  local datetime=$(date +%Y%m%d%H%M%S)
+  local tag="${branch}-${datetime}"
+
+  git tag "$tag"
+  echo "git push origin $tag"
+}
+
 # git alias
 alias gdh='git diff HEAD^..HEAD'
 alias gs='git status'
@@ -15,6 +24,7 @@ alias gpush="${gitRoot}/git_scripts/gitPushOriginCurBranch.sh"
 alias gpull="${gitRoot}/git_scripts/gitPullOriginCurBranch.sh"
 alias gsave="${gitRoot}/git_scripts/git_save_all_change.sh -b"
 alias gl1='git log --oneline --graph --decorate'
+alias gtag='git_tag_and_show_push'
 
 # ruby/rails alias
 alias rs='bundle exec rails'
